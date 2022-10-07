@@ -1,5 +1,10 @@
+require('dotenv').config({ path: require('find-config')('.env') })
 const app = require("express")()
+const port = 3000 || 5000
 
-app.listen(3000,()=>{
-    console.log("port survive on port 3000")
+const pool = require("./db");
+console.log(pool)
+
+app.listen( port,()=>{
+    console.log(`port survive on port ${port}`)
 })
